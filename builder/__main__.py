@@ -8,6 +8,9 @@ def __clear_gnome():
     os.system("sudo pacman -D --noconfirm --asexplicit gnome-shell mutter gdm gnome-control-center gnome-console nautilus gnome-session gnome-settings-daemon gvfs gvfs-mtp")
     os.system("sudo pacman -Rsn --noconfirm $(pacman -Qqgdtt gnome)")
 
+    os.system("sudo pacman -R --noconfirm htop")
+    os.system("sudo pacman -R --noconfirm vim")
+
 
 def __patch_multilib():
     os.system(r"sudo sed -i 's/^#\[multilib\]/[multilib]/' /etc/pacman.conf")
