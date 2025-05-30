@@ -1,40 +1,7 @@
 import os
 import packages
 
-def main():
 
-    print("Installation Start")
-
-    __clear_gnome()
-
-    os.system("sudo pacman -Sy")
-
-    #Включение мультибиблиотек
-    __patch_multilib()
-    os.system("sudo pacman -Syu")
-
-    #Мультизагрузка
-    os.system("sudo sed -i 's/#ParallelDownloads = 4/ParallelDownloads = 4/g' /etc/pacman.conf")
-
-    #Мультизагрузка
-    os.system("sudo sed -i 's/\[options\]/\[options\]\nDisableDownloadTimeout/g' /etc/pacman.conf")
-
-    #Устанавливаем первые пакеты для дальнейшей быстрой установки
-    __install_pacman_package(packages.FAST_PACKAGES)
-    __optimize_mirrors()
-
-    #Устанавливаем пакеты базовые
-    __install_pacman_package(packages.BASE_PACKAGES)
-
-    #Установка аур и его пакетов
-    __install_yay()
-    __install_pacman_package(packages.AUR_PACKAGES)
-
-
-
-
-if __name__ == "__main__":
-    main()
 
 def __clear_gnome():
     os.system("sudo pacman -D --noconfirm --asdeps $(pacman -Qqg gnome)")
@@ -63,3 +30,42 @@ def __install_aur_package(package_names: list):
     for package in package_names:
         os.system(f"yay -S --noconfirm {package}")
         print(f"Installed: {package}")
+
+
+def main():
+
+    print("Installation Start")
+
+    __clear_gnome()
+
+    os.system("sudo pacman -Sy")
+
+    #Включение мультибиблиотек
+    __patch_multilib()
+    os.system("sudo pacman -Syu")
+
+    #Мультизагрузка
+    os.system("sudo sed -i 's/#ParallelDownloads = 4/ParallelDownloads = 4/g' /etc/pacman.conf")
+
+    #Мультизагрузка
+    os.system("sudo sed -i 's/\[options\]/\[options\]\nDisableDownloadTimeout/g' /etc/pacman.conf")
+
+    #Устанавливаем первые пакеты для дальнейшей быстрой установки
+    __install_pacman_package(packages.FAST_PACKAGES)
+    __optimize_mirrors()
+
+    #Устанавливаем пакеты базовые
+    __install_pacman_package(packages.BASE_PACKAGES)
+
+    #Микрокод установка
+    os.system("sudo mkinitcpio -P")
+
+    #Установка аур и его пакетов
+    __install_yay()
+    __install_pacman_package(packages.AUR_PACKAGES)
+
+
+
+
+if __name__ == "__main__":
+    main()
