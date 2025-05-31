@@ -25,11 +25,11 @@ def __irqbalance_integration():
     os.system("sudo systemctl enable --now irqbalance")
 
 def __gnome_optimizer():
-    os.system("sudo systemctl --user mask org.gnome.SettingsDaemon.Wacom.service")
-    os.system("sudo systemctl --user mask org.gnome.SettingsDaemon.PrintNotifications.service")
-    os.system("sudo systemctl --user mask org.gnome.SettingsDaemon.ScreensaverProxy.service")
-    os.system("sudo systemctl --user mask org.gnome.SettingsDaemon.Sharing.service")
-    os.system("sudo systemctl --user mask org.gnome.SettingsDaemon.Smartcard.service")
+    os.system("systemctl --user mask org.gnome.SettingsDaemon.Wacom.service")
+    os.system("systemctl --user mask org.gnome.SettingsDaemon.PrintNotifications.service")
+    os.system("systemctl --user mask org.gnome.SettingsDaemon.ScreensaverProxy.service")
+    os.system("systemctl --user mask org.gnome.SettingsDaemon.Sharing.service")
+    os.system("systemctl --user mask org.gnome.SettingsDaemon.Smartcard.service")
 
 def __init_build_optimizer():
     os.system("mv ~/ArchGnome/configs/.makepkg.conf ~/")
