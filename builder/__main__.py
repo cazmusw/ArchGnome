@@ -45,14 +45,12 @@ def main():
     DownloadManager.__disk_optimizer()
     #Optimize system
     DownloadManager.__irqbalance_integration()
-
     DownloadManager.__init_build_optimizer()
-
-
 
     #Установка аур и его пакетов
     DownloadManager.__install_yay()
-    DownloadManager.__install_pacman_package(packages.AUR_PACKAGES)
+    if downloadPrograms:
+        DownloadManager.__install_pacman_package(packages.AUR_PACKAGES)
     DownloadManager.__install_sound_optimizer()
     DownloadManager.__pacman_cash_cleaner()
 

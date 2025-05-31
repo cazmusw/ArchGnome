@@ -5,7 +5,7 @@ def __install_microcode():
     os.system("sudo mkinitcpio -P")
 
 def __install_sound_optimizer():
-    os.system("sudo systemctl --user enable --now pipewire pipewire-pulse wireplumber")
+    os.system("systemctl --user enable --now pipewire pipewire-pulse wireplumber")
     os.system('sudo usermod -aG realtime "$USER"')
 
 def __pacman_cash_cleaner():
@@ -48,7 +48,7 @@ def __clear_gnome():
     os.system("sudo pacman -R --noconfirm vim")
 
 def __disable_timeout():
-    os.system("sudo sed -i 's/\[options\]/\[options\]\nDisableDownloadTimeout/g' /etc/pacman.conf")
+    os.system(r"sudo sed -i 's/\[options\]/\[options\]\nDisableDownloadTimeout/g' /etc/pacman.conf")
 
 
 def __patch_multilib():
