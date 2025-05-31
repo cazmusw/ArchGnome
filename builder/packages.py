@@ -3,11 +3,12 @@ FAST_PACKAGES = [
 ]
 
 BASE_PACKAGES = [
-    "base-devel"
+    "base-devel", "ananicy-cpp", "irqbalance", "realtime-privileges", "ccache", "pipewire-jack", "gst-plugin-pipewire", "rtkit",
+    "pacman-contrib"
 ]
 
 MY_PROGRAMS = [
-    "steam", "ttf-liberation", "chromium"
+    "steam", "ttf-liberation", "chromium", "vlc"
 ]
 
 MY_DRIVERS = [

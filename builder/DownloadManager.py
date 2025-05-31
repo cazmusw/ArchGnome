@@ -4,8 +4,41 @@ import os
 def __install_microcode():
     os.system("sudo mkinitcpio -P")
 
-def __udpdate_system():
+def __install_sound_optimizer():
+    os.system("sudo systemctl --user enable --now pipewire pipewire-pulse wireplumber")
+    os.system('sudo usermod -aG realtime "$USER"')
+
+def __pacman_cash_cleaner():
+    os.system("sudo systemctl enable paccache.timer")
+
+
+def __ananicy_cpp_integration():
+    os.system("sudo systemctl enable --now ananicy-cpp")
+    os.system("sudo git clone https://aur.archlinux.org/cachyos-ananicy-rules-git.git")
+    os.system("cd cachyos-ananicy-rules-git")
+    os.system("makepkg -sric")
+    os.system("sudo systemctl restart ananicy-cpp")
+
+def __disk_optimizer():
+    os.system("sudo systemctl enable fstrim.timer")
+
+def __irqbalance_integration():
+    os.system("sudo systemctl enable --now irqbalance")
+
+def __gnome_optimizer():
+    os.system("systemctl --user mask org.gnome.SettingsDaemon.Wacom.service")
+    os.system("systemctl --user mask org.gnome.SettingsDaemon.PrintNotifications.service")
+    os.system("systemctl --user mask org.gnome.SettingsDaemon.ScreensaverProxy.service")
+    os.system("systemctl --user mask org.gnome.SettingsDaemon.Sharing.service")
+    os.system("systemctl --user mask org.gnome.SettingsDaemon.Smartcard.service")
+
+def __init_build_optimizer():
+    os.system("mv ~/ArchGnome/configs/.makepkg.conf ~/")
+
+
+def __updater_system():
     os.system("sudo pacman -Sy --noconfirm")
+    os.system("sudo systemctl enable --now archlinux-keyring-wkd-sync.timer")
 
 def __clear_gnome():
     os.system("sudo pacman -D --noconfirm --asdeps $(pacman -Qqg gnome)")
@@ -28,8 +61,8 @@ def __optimize_mirrors():
     os.system("sudo reflector --verbose --country 'Russia' -l 25 --sort rate --save /etc/pacman.d/mirrorlist")
 
 def __install_yay():
-    os.system("git -C /tmp clone https://aur.archlinux.org/yay.git")
-    os.system("cd /tmp/yay && makepkg -si")
+    os.system("sudo git -C /tmp clone https://aur.archlinux.org/yay.git")
+    os.system("cd /tmp/yay && makepkg -sric --noconfirm")
 
 def __install_pacman_package(package_names: list):
     for package in package_names:
