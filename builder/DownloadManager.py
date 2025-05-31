@@ -14,7 +14,8 @@ def __pacman_cash_cleaner():
 
 def __ananicy_cpp_integration():
     os.system("sudo systemctl enable --now ananicy-cpp")
-    os.system("sudo git clone https://aur.archlinux.org/cachyos-ananicy-rules-git.git")
+    os.system("cd ~/")
+    os.system("git clone https://aur.archlinux.org/cachyos-ananicy-rules-git.git")
     os.system("cd cachyos-ananicy-rules-git")
     os.system("makepkg -sric")
     os.system("sudo systemctl restart ananicy-cpp")
@@ -61,7 +62,8 @@ def __optimize_mirrors():
     os.system("sudo reflector --verbose --country 'Russia' -l 25 --sort rate --save /etc/pacman.d/mirrorlist")
 
 def __install_yay():
-    os.system("sudo git -C /tmp clone https://aur.archlinux.org/yay.git")
+    os.system("cd ~/")
+    os.system("git -C /tmp clone https://aur.archlinux.org/yay.git")
     os.system("cd /tmp/yay && makepkg -sric --noconfirm")
 
 def __install_pacman_package(package_names: list):
