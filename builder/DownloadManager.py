@@ -62,7 +62,7 @@ def __optimize_mirrors():
 
 def __install_yay():
     os.system("git -C /tmp clone https://aur.archlinux.org/yay.git")
-    os.system("cd /tmp/yay && makepkg -si --noconfirm")
+    os.system("cd /tmp/yay && sudo -u nobody makepkg -si --noconfirm")
 
 def __install_pacman_package(package_names: list):
     for package in package_names:
