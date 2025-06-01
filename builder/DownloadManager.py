@@ -15,7 +15,7 @@ def __pacman_cash_cleaner():
 def __ananicy_cpp_integration():
     os.system("sudo systemctl enable --now ananicy-cpp")
     os.system("git clone https://aur.archlinux.org/cachyos-ananicy-rules-git.git")
-    os.system("cd cachyos-ananicy-rules-git && makepkg -sric --noconfirm")
+    os.system("cd cachyos-ananicy-rules-git && sudo -u nobody makepkg -sric --noconfirm")
     os.system("sudo systemctl restart ananicy-cpp")
 
 def __disk_optimizer():
@@ -72,5 +72,5 @@ def __install_pacman_package(package_names: list):
 
 def __install_aur_package(package_names: list):
     for package in package_names:
-        os.system(f"yay -S --noconfirm {package}")
+        os.system(f"sudo -u nobody yay -S --noconfirm {package}")
         print(f"Installed: {package}")
