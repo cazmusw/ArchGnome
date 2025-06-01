@@ -1,10 +1,5 @@
-import os
 import packages
 import DownloadManager
-
-
-
-
 
 def main():
 
@@ -50,7 +45,7 @@ def main():
     #Установка аур и его пакетов
     DownloadManager.__install_yay()
     if downloadPrograms:
-        DownloadManager.__install_pacman_package(packages.AUR_PACKAGES)
+        DownloadManager.__install_aur_package(packages.AUR_PACKAGES)
     DownloadManager.__install_sound_optimizer()
     DownloadManager.__pacman_cash_cleaner()
 

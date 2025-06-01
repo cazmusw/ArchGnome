@@ -54,7 +54,8 @@ def __disable_timeout():
 def __patch_multilib():
     os.system(r"sudo sed -i 's/^#\[multilib\]/[multilib]/' /etc/pacman.conf")
     os.system(r"sudo sed -i '/^\[multilib\]$/,/^\[/ s/^#\(Include = \/etc\/pacman\.d\/mirrorlist\)/\1/' /etc/pacman.conf")
-    os.system("sudo pacman -Syu --noconfirm")
+    os.system("sudo pacman -Sl --noconfirm multilib")
+    os.system("sudo pacman -Sy --noconfirm")
 
 def __optimize_mirrors():
     os.system("sudo reflector --verbose --country 'Russia' -l 25 --sort rate --save /etc/pacman.d/mirrorlist")
