@@ -52,6 +52,8 @@ def main():
     DownloadManager.__install_sound_optimizer()
     DownloadManager.__pacman_cash_cleaner()
 
+
+
     print("Installation End")
 
 

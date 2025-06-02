@@ -15,7 +15,7 @@ def __pacman_cash_cleaner():
 def __ananicy_cpp_integration():
     os.system("sudo systemctl enable --now ananicy-cpp")
     os.system("git clone https://aur.archlinux.org/cachyos-ananicy-rules-git.git")
-    os.system("cd cachyos-ananicy-rules-git && makepkg -sric --noconfirm --sudoloop")
+    os.system("cd cachyos-ananicy-rules-git && makepkg -sric --noconfirm")
     os.system("sudo systemctl restart ananicy-cpp")
 
 def __disk_optimizer():
@@ -40,12 +40,14 @@ def __updater_system():
     os.system("sudo systemctl enable --now archlinux-keyring-wkd-sync.timer")
 
 def __clear_gnome():
+
+    os.system("sudo pacman -R --noconfirm htop")
+    os.system("sudo pacman -R --noconfirm vim")
+
     os.system("sudo pacman -D --noconfirm --asdeps $(pacman -Qqg gnome)")
     os.system("sudo pacman -D --noconfirm --asexplicit gnome-shell mutter gdm gnome-control-center gnome-console nautilus gnome-session gnome-settings-daemon gvfs gvfs-mtp")
     os.system("sudo pacman -Rsn --noconfirm $(pacman -Qqgdtt gnome)")
 
-    os.system("sudo pacman -R --noconfirm htop")
-    os.system("sudo pacman -R --noconfirm vim")
 
 def __disable_timeout():
     os.system(r"sudo sed -i 's/\[options\]/\[options\]\nDisableDownloadTimeout/g' /etc/pacman.conf")
@@ -62,7 +64,7 @@ def __optimize_mirrors():
 
 def __install_yay():
     os.system("git -C /tmp clone https://aur.archlinux.org/yay.git")
-    os.system("cd /tmp/yay && makepkg -si --noconfirm --sudoloop")
+    os.system("cd /tmp/yay && makepkg -si --noconfirm")
 
 def __install_pacman_package(package_names: list):
     for package in package_names:

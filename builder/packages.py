@@ -17,6 +17,6 @@ MY_DRIVERS = [
 ]
 
 AUR_PACKAGES = [
-    "visual-studio-code-bin"
+    "visual-studio-code-bin", "extension-manager"
 ]
 
