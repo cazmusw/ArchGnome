@@ -34,14 +34,17 @@ def main():
     if downloadPrograms:
         DownloadManager.__install_pacman_package(packages.MY_PROGRAMS)
 
-    #Task manager
-    DownloadManager.__ananicy_cpp_integration()
     #Disk cleaner
     DownloadManager.__disk_optimizer()
     #Optimize system
     DownloadManager.__irqbalance_integration()
     DownloadManager.__init_build_optimizer()
 
+
+    input("Остановочная точка, далее потребуется подтверждать установку, будьте у экрана")
+
+    #Task manager
+    DownloadManager.__ananicy_cpp_integration()
     #Установка аур и его пакетов
     DownloadManager.__install_yay()
     if downloadPrograms:
