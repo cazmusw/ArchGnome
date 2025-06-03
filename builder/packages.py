@@ -1,5 +1,5 @@
 FAST_PACKAGES = [
-    "linux-firmware", "reflector", "rsync", "curl"
+    "reflector", "rsync", "curl"
 ]
 
 BASE_PACKAGES = [
