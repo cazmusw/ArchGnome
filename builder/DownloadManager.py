@@ -12,8 +12,8 @@ def __pacman_cash_cleaner():
     os.system("sudo systemctl enable paccache.timer")
 
 def __change_gnome_settings_to_my():
-    os.system(r'gsettings set org.gnome.desktop.wm.keybindings switch-input-source "[\'<Alt>Shift_L\']"')
-    os.system(r'gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "[\'<Shift>Alt_L\']"')
+    os.system(r"gsettings set org.gnome.desktop.wm.keybindings switch-input-source \"['<Alt>Shift_L']\"")
+    os.system(r"gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward \"['<Shift>Alt_L']\"")
     os.system(r'gsettings set org.gnome.desktop.wm.preferences button-layout \'appmenu:minimize,maximize,close\'')
     os.system(r'gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false')
     os.system(r'gsettings set org.gnome.desktop.interface font-hinting \'full\'')
@@ -24,7 +24,7 @@ def __change_gnome_settings_to_my():
     os.system(r'gsettings set org.gnome.desktop.interface show-battery-percentage true')
     os.system(r'gsettings set org.gnome.desktop.interface enable-hot-corners false')
     os.system(r'gsettings set org.gnome.desktop.interface color-scheme \'prefer-dark\'')
-    os.system(r'gsettings set org.gnome.desktop.input-sources sources "[(\'xkb\', \'us\'), (\'xkb\', \'ru\')]"')
+    os.system(r"gsettings set org.gnome.desktop.input-sources sources \"[('xkb', 'us'), ('xkb', 'ru')]\"")
 
 def __ananicy_cpp_integration():
     os.system("sudo systemctl enable --now ananicy-cpp")
