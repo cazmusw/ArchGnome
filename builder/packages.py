@@ -8,7 +8,7 @@ BASE_PACKAGES = [
 ]
 
 MY_PROGRAMS = [
-    "steam", "ttf-liberation", "chromium", "vlc", "telegram-desktop"
+    "steam", "ttf-liberation", "chromium", "vlc", "telegram-desktop", "mission-center"
 ]
 
 MY_DRIVERS = [
