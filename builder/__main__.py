@@ -53,6 +53,9 @@ def main():
     DownloadManager.__pacman_cash_cleaner()
 
 
+    #Post install
+    DownloadManager.__change_gnome_settings_to_my()
+
 
     print("Installation End")
 
