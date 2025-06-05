@@ -19,7 +19,9 @@ def __inject_user_themes():
     os.system("mv ~/ArchGnome/themes/ ~/.user-themes/")
     os.system("gsettings set org.gnome.desktop.background picture-uri file://~/.user-themes/background.jpg")
 
-
+def __jetbrains_bypass():
+    os.system("mv ~/ArchGnome/jetbra ~/")
+    os.system("sh ~/jetbra/scripts/jetbrains-bypass.sh")
 
 def __change_gnome_settings_to_my():
     #Расскладка переключение

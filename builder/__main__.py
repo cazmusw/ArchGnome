@@ -57,6 +57,7 @@ def main():
     DownloadManager.__inject_user_extensions()
     DownloadManager.__inject_user_themes()
 
+    DownloadManager.__jetbrains_bypass()
 
     print("Installation End")
 
