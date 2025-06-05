@@ -11,6 +11,13 @@ def __install_sound_optimizer():
 def __pacman_cash_cleaner():
     os.system("sudo systemctl enable paccache.timer")
 
+
+def __inject_user_extensions():
+    os.system("mv ~/ArchGnome/extensions ~/.local/share/gnome-shell")
+
+def __inject_user_themes():
+    os.system("mv ~/ArchGnome/themes/ ~/.user-themes/")
+
 def __change_gnome_settings_to_my():
     os.system("gsettings set org.gnome.desktop.wm.keybindings switch-input-source \"['<Alt>Shift_L']\"")
     os.system("gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward \"['<Shift>Alt_L']\"")
@@ -25,6 +32,10 @@ def __change_gnome_settings_to_my():
     os.system('gsettings set org.gnome.desktop.interface enable-hot-corners false')
     os.system('gsettings set org.gnome.desktop.interface color-scheme \'prefer-dark\'')
     os.system("gsettings set org.gnome.desktop.input-sources sources \"[('xkb', 'us'), ('xkb', 'ru')]\"")
+    os.system("gsettings set org.gnome.settings-daemon.plugins.power idle-dim false")
+    os.system("gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'")
+    os.system("gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'")
+
 
 def __ananicy_cpp_integration():
     os.system("sudo systemctl enable --now ananicy-cpp")

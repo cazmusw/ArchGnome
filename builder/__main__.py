@@ -54,6 +54,8 @@ def main():
 
     #Post install
     DownloadManager.__change_gnome_settings_to_my()
+    DownloadManager.__inject_user_extensions()
+    DownloadManager.__inject_user_themes()
 
 
     print("Installation End")
