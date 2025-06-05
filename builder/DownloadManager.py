@@ -17,21 +17,38 @@ def __inject_user_extensions():
 
 def __inject_user_themes():
     os.system("mv ~/ArchGnome/themes/ ~/.user-themes/")
+    os.system("gsettings set org.gnome.desktop.background picture-uri file://~/.user-themes/background.jpg")
+
+
 
 def __change_gnome_settings_to_my():
+    #Расскладка переключение
     os.system("gsettings set org.gnome.desktop.wm.keybindings switch-input-source \"['<Alt>Shift_L']\"")
     os.system("gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward \"['<Shift>Alt_L']\"")
+    #Вернём кнопки на родину
     os.system('gsettings set org.gnome.desktop.wm.preferences button-layout \'appmenu:minimize,maximize,close\'')
+
+    #Улучшаем визуал
     os.system('gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false')
     os.system('gsettings set org.gnome.desktop.interface font-hinting \'full\'')
+
+    #Авто выход с сесий не нужен
     os.system('gsettings set org.gnome.desktop.session idle-delay 0')
     os.system('gsettings set org.gnome.desktop.screensaver lock-enabled false')
+
+    #Уведы не нужны
     os.system('gsettings set org.gnome.desktop.notifications show-in-lock-screen false')
+    #Формат часов
     os.system('gsettings set org.gnome.desktop.interface clock-show-seconds true')
+    #Процент заряда, для ноутбуков
     os.system('gsettings set org.gnome.desktop.interface show-battery-percentage true')
+    #Горячие углы не нужны
     os.system('gsettings set org.gnome.desktop.interface enable-hot-corners false')
+    #Белая тема - жуть
     os.system('gsettings set org.gnome.desktop.interface color-scheme \'prefer-dark\'')
+    #Добавляем русский
     os.system("gsettings set org.gnome.desktop.input-sources sources \"[('xkb', 'us'), ('xkb', 'ru')]\"")
+    #Для ноутов отключаем авто стоп экранов
     os.system("gsettings set org.gnome.settings-daemon.plugins.power idle-dim false")
     os.system("gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'")
     os.system("gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'")

@@ -4,7 +4,8 @@ FAST_PACKAGES = [
 
 BASE_PACKAGES = [
     "base-devel", "ananicy-cpp", "irqbalance", "realtime-privileges", "ccache", "pipewire-jack",
-    "gst-plugin-pipewire", "rtkit", "pacman-contrib"
+    "gst-plugin-pipewire", "rtkit", "pacman-contrib", "noto-fonts", "noto-fonts-cjk",
+    "noto-fonts-emoji", "noto-fonts-extra"
 ]
 
 MY_PROGRAMS = [
