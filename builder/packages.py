@@ -8,12 +8,12 @@ BASE_PACKAGES = [
 ]
 
 MY_PROGRAMS = [
-    "steam", "ttf-liberation", "chromium", "vlc", "telegram-desktop", "mission-center"
+    "steam", "ttf-liberation", "chromium", "vlc", "telegram-desktop", "mission-center",
+    "partitionmanager", "discord"
 ]
 
 MY_DRIVERS = [
-    "intel-ucode", "nvidia-open-dkms", "nvidia-utils", "lib32-nvidia-utils", "nvidia-settings",
-    "lib32-opencl-nvidia", "opencl-nvidia", "libxnvctrl", "lib32-vulkan-icd-loader", "libva-nvidia-driver"
+    "intel-ucode"
 ]
 
 AUR_PACKAGES = [
