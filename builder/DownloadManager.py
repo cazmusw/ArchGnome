@@ -81,8 +81,7 @@ def __init_build_optimizer():
 
 
 def __updater_system():
-    os.system("sudo pacman -Sy --noconfirm")
-    os.system("sudo systemctl enable --now archlinux-keyring-wkd-sync.timer")
+    os.system("sudo pacman -Syyu --noconfirm")
 
 def __clear_gnome():
 
