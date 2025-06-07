@@ -16,8 +16,9 @@ def __inject_user_extensions():
     os.system("mv ~/ArchGnome/extensions ~/.local/share/gnome-shell")
 
 def __inject_user_themes():
+    home_dir = os.path.expanduser("~")
     os.system("mv ~/ArchGnome/themes/ ~/.user-themes/")
-    os.system("gsettings set org.gnome.desktop.background picture-uri file://~/.user-themes/background.jpg")
+    os.system(f"gsettings set org.gnome.desktop.background picture-uri-dark file://{home_dir}/.user-themes/wallpaper.jpg")
 
 def __jetbrains_bypass():
     os.system("mv ~/ArchGnome/jetbra ~/")
