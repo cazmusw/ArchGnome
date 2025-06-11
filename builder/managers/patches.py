@@ -8,11 +8,7 @@ class PatchManager:
         PatchManager.__patch_multilib()
         PatchManager.__patch_timeout()
         PatchManager.__patch_build_system()
-        PatchManager.__optimize_mirrors()
 
-    @staticmethod
-    def __optimize_mirrors():
-        os.system("sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist")
 
     @staticmethod
     def __patch_multilib():

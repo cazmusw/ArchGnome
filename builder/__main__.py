@@ -9,6 +9,10 @@ from managers.jetbrains import JetbrainsManager
 def main():
 
     print("Instalation started...")
+
+    Utils.__install_pacman_package(packages.REFLECTOR)
+    Utils.__optimize_mirrors()
+
     Utils.__install_yay()
 
     MyConfigurationManager.start()
@@ -16,6 +20,7 @@ def main():
     Utils.__install_pacman_package(packages.BASE_PACKAGES)
     Utils.__install_pacman_package(packages.MY_DRIVERS)
     Utils.__install_pacman_package(packages.MY_PROGRAMS)
+
 
     Utils.__install_aur_package(packages.AUR_PACKAGES)
 
