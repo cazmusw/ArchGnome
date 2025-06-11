@@ -15,6 +15,7 @@ class PatchManager:
         os.system(r"sudo sed -i 's/^#\[multilib\]/[multilib]/' /etc/pacman.conf")
         os.system(r"sudo sed -i '/^\[multilib\]$/,/^\[/ s/^#\(Include = \/etc\/pacman\.d\/mirrorlist\)/\1/' /etc/pacman.conf")
         os.system("sudo pacman -Sl --noconfirm multilib")
+        os.system("sudo pacman -Sy --noconfirm")
 
     @staticmethod
     def __patch_timeout():

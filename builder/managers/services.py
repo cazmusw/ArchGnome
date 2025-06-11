@@ -35,8 +35,8 @@ class ServicesManager:
     def __ananicy_cpp_integration():
         input("You need to enter password. Press enter to continue...")
         os.system("sudo systemctl enable --now ananicy-cpp")
-        os.system("sudo -u $(logname) git clone https://aur.archlinux.org/cachyos-ananicy-rules-git.git")
-        os.system("cd cachyos-ananicy-rules-git && sudo -u $(logname) makepkg -sric --noconfirm")
+        os.system("git clone https://aur.archlinux.org/cachyos-ananicy-rules-git.git")
+        os.system("cd cachyos-ananicy-rules-git && makepkg -sric --noconfirm")
         os.system("sudo systemctl restart ananicy-cpp")
 
     @staticmethod
