@@ -1,11 +1,7 @@
-FAST_PACKAGES = [
-    "reflector", "rsync", "curl"
-]
-
 BASE_PACKAGES = [
-    "base-devel", "ananicy-cpp", "irqbalance", "realtime-privileges", "ccache", "pipewire-jack",
-    "gst-plugin-pipewire", "rtkit", "pacman-contrib", "noto-fonts", "noto-fonts-cjk",
-    "noto-fonts-emoji", "noto-fonts-extra", "iwd"
+    "reflector", "rsync", "curl", "linux-firmware","base-devel", "ananicy-cpp", "irqbalance", "realtime-privileges",
+    "ccache", "pipewire-jack", "gst-plugin-pipewire", "rtkit", "pacman-contrib", "noto-fonts", "noto-fonts-cjk",
+    "noto-fonts-emoji", "noto-fonts-extra", "iwd", "fuse2"
 ]
 
 MY_PROGRAMS = [
@@ -14,12 +10,10 @@ MY_PROGRAMS = [
 ]
 
 MY_DRIVERS = [
-    "intel-ucode","nvidia-open","nvidia-utils","lib32-nvidia-utils","nvidia-settings", "iucode-tool",
-    "vulkan-icd-loader", "lib32-vulkan-icd-loader", "lib32-opencl-nvidia", "opencl-nvidia",
-    "libxnvctrl"
+    "intel-ucode","iucode-tool"
 ]
 
 AUR_PACKAGES = [
-    "visual-studio-code-bin", "extension-manager"
+    "visual-studio-code-bin", "extension-manager", "mkinitcpio-firmware"
 ]
 
