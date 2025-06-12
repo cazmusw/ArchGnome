@@ -7,12 +7,19 @@ class ServicesManager:
 
     @staticmethod
     def start():
+        ServicesManager.__init_key_updater()
         ServicesManager.__init_pacman_cash_cleaner()
         ServicesManager.__inject_sound_optimizer()
         ServicesManager.__irqbalance_integration()
         ServicesManager.__disk_optimizer()
         ServicesManager.__ananicy_cpp_integration()
         ServicesManager.__install_microcode()
+        ServicesManager.__init_prime_start_integration()
+        ServicesManager.__init_oom_killer()
+
+    @staticmethod
+    def __init_oom_killer():
+        os.system("sudo systemctl enable --now systemd-oomd")
 
     @staticmethod
     def __init_pacman_cash_cleaner():
@@ -42,3 +49,11 @@ class ServicesManager:
     @staticmethod
     def __install_microcode():
         os.system("sudo mkinitcpio -P")
+
+    @staticmethod
+    def __init_key_updater():
+        os.system("sudo systemctl enable --now archlinux-keyring-wkd-sync.timer")
+
+    @staticmethod
+    def __init_prime_start_integration():
+        os.system("sudo systemctl enable --now switcheroo-control")

@@ -28,6 +28,8 @@ def main():
     ServicesManager.start()
     JetbrainsManager.start()
 
+    Utils.__after_install_clear()
+
     print("Installation End")
 
 

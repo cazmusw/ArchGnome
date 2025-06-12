@@ -5,6 +5,9 @@ def __install_yay():
     os.system("git -C /tmp clone https://aur.archlinux.org/yay.git")
     os.system("cd /tmp/yay && makepkg -si --noconfirm")
 
+def __after_install_clear():
+    os.system("sudo pacman -Syu")
+    os.system("sudo pacman -Scc")
 
 def __optimize_mirrors():
     os.system("sudo reflector --verbose --country 'Russia' -l 25 --sort rate --save /etc/pacman.d/mirrorlist")
