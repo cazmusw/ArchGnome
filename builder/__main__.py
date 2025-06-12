@@ -12,6 +12,7 @@ def main():
 
     Utils.__install_pacman_package(packages.REFLECTOR)
     Utils.__optimize_mirrors()
+    Utils.__patch_multilib()
 
     Utils.__install_yay()
 

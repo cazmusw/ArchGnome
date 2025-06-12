@@ -5,7 +5,6 @@ class PatchManager:
 
     @staticmethod
     def start():
-        PatchManager.__patch_multilib()
         PatchManager.__patch_timeout()
         PatchManager.__patch_build_system()
         PatchManager.__patch_nvidia_to_cpu_access()
@@ -26,12 +25,6 @@ class PatchManager:
     def __patch_nvidia_to_cpu_access():
         os.system("sudo sh -c 'echo options nvidia NVreg_UsePageAttributeTable=1 >> /etc/modprobe.d/nvidia-pat.conf'")
 
-    @staticmethod
-    def __patch_multilib():
-        os.system(r"sudo sed -i 's/^#\[multilib\]/[multilib]/' /etc/pacman.conf")
-        os.system(r"sudo sed -i '/^\[multilib\]$/,/^\[/ s/^#\(Include = \/etc\/pacman\.d\/mirrorlist\)/\1/' /etc/pacman.conf")
-        os.system("sudo pacman -Sl --noconfirm multilib")
-        os.system("sudo pacman -Sy --noconfirm")
 
     @staticmethod
     def __patch_timeout():
