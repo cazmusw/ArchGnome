@@ -9,8 +9,8 @@ BASE_PACKAGES = [
 ]
 
 MY_PROGRAMS = [
-    "steam", "ttf-liberation", "chromium", "vlc", "telegram-desktop", "mission-center",
-    "partitionmanager", "discord", "file-roller", "switcheroo-control"
+    "steam", "ttf-liberation", "firefox", "mpv", "telegram-desktop", "resources",
+    "gparted", "discord", "file-roller", "switcheroo-control"
 ]
 
 MY_DRIVERS = [

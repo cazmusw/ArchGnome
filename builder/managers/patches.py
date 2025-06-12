@@ -32,4 +32,4 @@ class PatchManager:
 
     @staticmethod
     def __patch_build_system():
-        os.system("mv ~/ArchGnome/configs/.makepkg.conf ~/")
+        os.system("mv configs/.makepkg.conf ~/")
