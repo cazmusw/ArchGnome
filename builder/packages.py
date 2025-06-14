@@ -11,7 +11,7 @@ BASE_PACKAGES = [
 
 MY_PROGRAMS = [
     "steam", "ttf-liberation", "firefox", "mpv", "telegram-desktop", "resources",
-    "gparted", "discord", "file-roller", "switcheroo-control"
+    "gparted", "discord", "file-roller", "switcheroo-control", "libreoffice"
 ]
 
 MY_DRIVERS = [
