@@ -5,7 +5,8 @@ REFLECTOR = [
 BASE_PACKAGES = [
     "linux-firmware","base-devel", "ananicy-cpp", "irqbalance", "realtime-privileges",
     "ccache", "pipewire-jack", "gst-plugin-pipewire", "rtkit", "pacman-contrib", "noto-fonts", "noto-fonts-cjk",
-    "noto-fonts-emoji", "noto-fonts-extra", "iwd", "fuse2"
+    "noto-fonts-emoji", "noto-fonts-extra", "iwd", "fuse2", "lrzip", "unrar", "unzip", "unace", "p7zip",
+    "squashfs-tools"
 ]
 
 MY_PROGRAMS = [
@@ -22,4 +23,3 @@ MY_DRIVERS = [
 AUR_PACKAGES = [
     "visual-studio-code-bin", "extension-manager", "mkinitcpio-firmware"
 ]
-

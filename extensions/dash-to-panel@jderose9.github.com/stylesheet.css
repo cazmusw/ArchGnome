@@ -238,9 +238,9 @@
 #uiGroup.br20 #preview-menu .preview-header-box,
 #uiGroup.br20 #preview-menu .preview-container,
 #uiGroup.br20 #preview-menu .preview-close-btn-container { 
-	border-radius: 20px !important;
+	border-radius: 30px !important;
 	overflow: hidden !important;
 }
 #uiGroup.br20 .dashtopanelPanel.dock .showdesktop-button { 
-	border-radius: 0 20px 20px 0 !important;
+	border-radius: 0 30px 30px 0 !important;
 }
